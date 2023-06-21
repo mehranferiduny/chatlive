@@ -1,0 +1,185 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">q
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Whatsapp Live</title>
+  <meta charset="utf-8">
+  <script src="js/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styile.css">
+  
+  <!-- Font Awesome File -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <script src="/js/javas.js"></script>
+</head>
+
+<body>
+
+  <div class="container app">
+    <div class="row app-one">
+  
+      <div class="col-sm-4 side" >
+        <div class="side-one" id="sideone" >
+          <!-- Heading -->
+          <div class="row heading">
+            <div class="col-sm-5 col-xs-1 heading-avatar heading-avatar-icon">
+         
+                <img class="co-sm-3" src="images/picpro.jpg">
+                
+                <div class="col-sm-8 col-xs-1 heading-name pull-right" style="color : #fdfdfd;padding: 8px !important;" id="fullname">
+                </div>
+              
+            </div>
+            
+            <div class="col-sm-1 col-xs-1  heading-dot  pull-right" id="singout">
+              <i class="fa fa-sign-out  pull-right"  style="font-size:20px ;"  aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-2 col-xs-2 heading-compose  pull-right" onclick="comment()">
+              <i class="fa fa-comments   pull-right" style="font-size:20px ;" aria-hidden="true"></i>
+            </div>
+            
+          </div>
+          <!-- Heading End -->
+          
+          <!-- SearchBox -->
+          <div class="row searchBox">
+            <div class="col-sm-12 searchBox-inner">
+              <div class="form-group has-feedback">
+                <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search Box End -->
+          <!-- sideBar -->
+          <ul class="row sideBar" id="onlineuser">
+        
+
+         
+        </ul>
+          <!-- Sidebar End -->
+        </div>
+       
+        <!-- Sidebar End -->
+      </div>
+
+    
+      <!-- New Message Sidebar End -->
+    
+      <!-- Conversation Start -->
+      <div class="col-sm-8 conversation" id="conversation">
+        <!-- Heading -->
+        <div class="row heading">
+          <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+            <div class="heading-avatar-icon">
+                <img src="images/usergrup.png">
+            </div>
+          </div>
+          <div class="col-sm-8 col-xs-6 heading-name" id="titleroom">
+         
+            <span class="heading-online text-white">Online</span>
+          </div>
+          <div class="col-sm-1 col-xs-2  heading-dot pull-right" onclick="onliin()">
+            <i class="fa fa-users  pull-right"  style="font-size:20px ;"  aria-hidden="true"></i>
+          </div>
+        </div>
+        
+        <!-- Heading End -->
+
+        <!-- Message Box -->
+        <div class="row message" id="chatconntiner">
+
+          <div class="row message-previous">
+           
+            <div class="col-sm-12 previous" style="color: #fdfdfd;
+            text-align: center;" id="feedback">
+            
+            <p>you can chat message in app....</p>
+            
+           
+            </div>
+          </div>
+
+          <ul class="row message-body" id="chatbox1">
+           
+          </ul>
+
+          <ul class="row message-body"  id="chatbox">
+           
+        </ul>
+        </div>
+        <!-- Message Box End -->
+
+        <!-- Reply Box -->
+        <form id="chatform">
+        <div class="row reply">
+         
+          <div class="col-sm-11 col-xs-11 reply-main">
+            <textarea class="form-control shadow-lg p-3 mb-5 bg-white rounded" rows="1" id="inputmessage"></textarea>
+          </div>
+          <button class="col-sm-1 col-xs-1 reply-send " style="background: none; border: none;" type="submit">
+            <i  class="fa fa-send-o " style="font-size: 21px ;" aria-hidden="true"></i>
+          </button>
+          
+        </div>
+    </form>
+        <!-- Reply Box End -->
+      </div>
+      <!-- Conversation End -->
+    </div>
+
+    <!-- App One End -->
+  </div>
+
+  <!-- App End -->
+
+
+  <!-- Modal -->
+  <div div class="modal" id="pvchat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modalstayl">
+        <div class="modal-header">
+          <h5 class="modal-title"  id="modalTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span class="alert alert-success p2" id="pvmessage"></span>
+        </div>
+        <div class="modal-body">
+          <form id="pvchatform">
+            
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea class="form-control inputpv" id="pvchatinput"></textarea>
+            </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btnclose" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary btnsendpv">Send message</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal End-->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/socket.io.min.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+
+</html>
