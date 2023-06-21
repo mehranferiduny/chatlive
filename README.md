@@ -1,5 +1,5 @@
 # chatlive
-###chatroom example with by websocket(socket.io)
+### chatroom example with by websocket(socket.io)
 
 Chat room project with JavaScript language with the help of Socket.io
 
